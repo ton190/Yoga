@@ -1,0 +1,28 @@
+$colors: (
+  primary: (
+    bg-100: hsl(226, 27%, 54%),
+    bg-200: hsl(318, 24%, 54%),
+    bg-300: hsl(203, 38%, 48%),
+    fg: hsl(0, 0%, 100%),
+  ),
+  Toggle: (
+    line: hsl(0, 0%, 100%),
+  ),
+  TopMenu: (
+    text: hsl(0, 0%, 100%),
+    border: hsla(0, 0%, 100%, 0.5),
+    menu_bg: hsla(261, 16%, 54%, 1),
+    submenu_bg: hsla(261, 16%, 40%, 0.8),
+    mobile_menu_bg: hsla(261, 16%, 40%, 1),
+    hover_bg: hsla(261, 16%, 25%, 0.7),
+    logo_bg: hsl(35, 85%, 85%),
+    logo_shadow: hsla(35, 85%, 80%, 0.8),
+  ),
+  Buttons: (
+    bg: hsl(340, 98%, 42%),
+    bg_hover: hsl(340, 98%, 35%),
+  ),
+  Home: (
+    shadow-100: hsla(35, 100%, 50%, 1),
+  ),
+);

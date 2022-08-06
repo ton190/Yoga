@@ -1,0 +1,18 @@
+@use "../basic/" as *;
+
+.StarList {
+  p {
+    position: relative;
+    margin-left: 30px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      width: 15px;
+      height: 15px;
+      background: url("../../pics/star2.png");
+      background-size: cover;
+    }
+  }
+}
+

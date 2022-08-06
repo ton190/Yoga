@@ -1,0 +1,66 @@
+@use "../../basic/" as *;
+
+.About {
+  background: url("../../../pages//About/ornament.png");
+  background-repeat: no-repeat;
+  background-position: right 100px;
+  img {
+    width: 100%;
+  }
+
+  h1 {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    @include gap(md);
+    align-items: center;
+    &:after {
+      content: "";
+      height: 28px;
+      background: url("../../../pics/star.png"),
+        linear-gradient(transparent 45%, clr(primary, fg) 45%, transparent 55%);
+      background-repeat: no-repeat, repeat;
+    }
+  }
+
+  .about,
+  .yoga,
+  .energy {
+    display: grid;
+    @include gap(lg);
+  }
+  .yoga {
+    display: grid;
+    @include gap(lg);
+    .p1,
+    .p2 {
+      display: grid;
+      @include gap(sm);
+    }
+    .p2 .container {
+      display: grid;
+      @include gap(md);
+
+      > div {
+        display: grid;
+        gap: pg(100);
+        align-content: flex-start;
+        > div {
+          width: max-content;
+          height: max-content;
+          padding: 5px;
+          text-align: center;
+          border-radius: 100%;
+          box-shadow: clr(primary, fg) 0px 0px 1px 1px;
+        }
+      }
+    }
+  }
+  .energy {
+    div {
+      display: grid;
+      @include gap(md);
+    }
+  }
+}
+
+

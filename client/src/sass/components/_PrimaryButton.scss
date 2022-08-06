@@ -1,0 +1,17 @@
+@use "../basic/" as *;
+
+.PrimaryButton {
+  background: clr(Buttons, bg);
+  padding: pg(300) pg(600);
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color, 0.2s, text-shadow 0.2s;
+
+  &:hover {
+    background: clr(Buttons, bg_hover);
+    text-shadow: clr(primary, fg) 0px 0px 10px;
+  }
+}
+

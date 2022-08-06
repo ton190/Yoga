@@ -1,0 +1,24 @@
+@use "../../basic/" as *;
+
+.SunsetYoga {
+  button {
+    @include mq(sm) {
+      justify-self: center;
+    }
+  }
+  h1 {
+    text-align: center;
+  }
+  .topImg,
+  .botImg {
+    max-width: 436px;
+    width: 100%;
+    justify-self: center;
+    border-bottom: 1px solid clr(primary, fg);
+  }
+  .botImg {
+    transform: rotate(180deg);
+  }
+}
+
+

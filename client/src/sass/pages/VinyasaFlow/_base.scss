@@ -1,0 +1,9 @@
+@use "../../basic/" as *;
+
+.VanyasaFlow {
+  .p1 {
+    display: grid;
+    @include gap(md);
+  }
+}
+

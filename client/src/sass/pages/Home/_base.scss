@@ -1,0 +1,49 @@
+@use "../../basic/" as *;
+
+.Home {
+  background: url("../../../pages/Home/bg.jpg");
+  background-size: cover;
+	background-position: center;
+  background-repeat: no-repeat;
+  h1 {
+    text-align: center;
+  }
+  h3 {
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    padding: 0 pg(400);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .separator {
+    height: 1px;
+    background: clr(primary, fg);
+    width: 200px;
+    justify-self: center;
+  }
+
+	.page{
+		align-content: center;
+	}
+  .container {
+		display: grid;
+		@include gap(lg);
+    > div {
+      display: grid;
+      @include gap(md);
+      align-content: flex-start;
+      justify-items: center;
+      p {
+        position: relative;
+      }
+    }
+  }
+}
+
+

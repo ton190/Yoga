@@ -1,0 +1,86 @@
+@use "../../basic/" as *;
+
+.TopMenu {
+  @include mq(md) {
+    justify-content: center;
+    grid-template-columns: minmax(min-content, 1000px);
+    position: absolute;
+
+    .logo {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 211px;
+      margin-right: pg(600);
+    }
+
+    .menu {
+      display: flex;
+      position: relative;
+      padding-top: 0;
+      background: initial;
+      flex-grow: 0;
+      flex-basis: 700px;
+
+      &.closing {
+        opacity: 1;
+      }
+    }
+
+    nav {
+      flex-grow: 1;
+      flex-direction: row;
+      align-content: initial;
+      justify-content: space-between;
+      overflow-y: initial;
+      a,
+      .title {
+        font-size: 0.9em;
+        display: block;
+        transition: text-shadow 0.2s;
+        &:hover {
+          background: initial;
+        }
+      }
+
+      .links {
+        display: none;
+      }
+
+      .submenu {
+        position: relative;
+
+        &:hover,
+        .links:hover {
+          .title {
+            text-shadow: clr(TopMenu, text) 0px 0px 10px;
+          }
+          .links {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: grid;
+            background: clr(TopMenu, submenu_bg);
+            box-shadow: clr(TopMenu, menu_bg) 0px 0px 2px 1px;
+            border-radius: 15px;
+            animation: a_op 300ms forwards;
+
+            a {
+              padding: pg(200);
+              transition: background-color 0.2s;
+
+              &:first-of-type {
+                border-radius: 15px 15px 0px 0px;
+              }
+              &:last-of-type {
+                border-radius: 0px 0px 15px 15px;
+              }
+              &:hover {
+                background: clr(TopMenu, hover_bg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

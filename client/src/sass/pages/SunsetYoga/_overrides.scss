@@ -1,0 +1,29 @@
+@use "../../basic/" as *;
+
+.SunsetYoga {
+  @include mq(sm) {
+    h1 {
+      display: grid;
+      @include gap(md);
+      grid-template-columns: 1fr minmax(min-content, max-content) 1fr;
+      align-items: center;
+      &::before,
+      &::after {
+        content: "";
+        height: 28px;
+        min-width: 100px;
+        background: url("../../../pics/star.png"),
+          linear-gradient(
+            transparent 45%,
+            clr(primary, fg) 45%,
+            transparent 55%
+          );
+        background-repeat: no-repeat, repeat;
+      }
+      &::before {
+        background-position: right;
+      }
+    }
+  }
+}
+

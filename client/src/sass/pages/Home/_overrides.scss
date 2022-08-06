@@ -1,0 +1,20 @@
+@use "../../basic/" as *;
+
+.Home {
+  @include mq(sm) {
+    .separator {
+      display: none !important;
+    }
+
+    .container {
+      grid-auto-flow: column;
+      > div {
+				align-self: center;
+        &:last-of-type {
+          align-content: flex-end;
+        }
+      }
+    }
+  }
+}
+
