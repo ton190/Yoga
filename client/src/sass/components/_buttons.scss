@@ -1,6 +1,6 @@
 @use "../basic/" as *;
 
-.PrimaryButton {
+.button {
   background: clr(Buttons, bg);
   padding: pg(300) pg(600);
   border-radius: 25px;

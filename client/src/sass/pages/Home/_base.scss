@@ -1,9 +1,9 @@
 @use "../../basic/" as *;
 
 .Home {
-  background: url("../../../pages/Home/bg.jpg");
+  background: url("../../../pics/pages/Home/bg.jpg");
   background-size: cover;
-	background-position: center;
+  background-position: center;
   background-repeat: no-repeat;
   h1 {
     text-align: center;
@@ -45,5 +45,3 @@
     }
   }
 }
-
-

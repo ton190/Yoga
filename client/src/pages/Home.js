@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import PrimaryButton from "../../components/PrimaryButton";
-import "./bg.jpg";
+import "../pics/pages/Home/bg.jpg";
 
 export default function Home({ motionParam }) {
 	useEffect(() => {
@@ -15,7 +14,7 @@ export default function Home({ motionParam }) {
 					<div>
 						<h1>Sunset Yoga Girl</h1>
 						<h3>YOGA TEACHER & WELLNESS COACH</h3>
-						<PrimaryButton>Join SunSet Yoga Class</PrimaryButton>
+						<button className="button">Join SunSet Yoga Class</button>
 					</div>
 					<div className="separator"></div>
 					<div>

@@ -1,15 +1,13 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import PrimaryButton from "../../components/PrimaryButton";
-import StarList from "../../components/StarList/";
-import StarContainer from "../../components/StarContainer";
-import AboutImg1 from "./about1.jpg";
-import AboutImg2 from "./about2.jpg";
-import Video from "./video.jpg";
-import "./sunset_yoga.jpg";
-import "./video.jpg";
-import "../../pics/star.png";
-import "./ornament.png";
+import StarList from "../components/StarList";
+import StarContainer from "../components/StarContainer";
+import AboutImg1 from "../pics/pages/About/about1.jpg";
+import AboutImg2 from "../pics/pages/About/about2.jpg";
+import Video from "../pics/pages/About/video.jpg";
+import "../pics/pages/About/sunset_yoga.jpg";
+import "../pics/star.png";
+import "../pics/pages/About/ornament.png";
 
 export default function About({ motionParam }) {
 	useEffect(() => {
@@ -86,7 +84,7 @@ export default function About({ motionParam }) {
 							begin one hour before sunset. Mats are available as needed.
 						</p>
 					</div>
-					<PrimaryButton>Book A Class With Natalia</PrimaryButton>
+					<button className="button">Book A Class With Natalia</button>
 				</div>
 				<div className="energy">
 					<img alt="Yoga" src={Video} />

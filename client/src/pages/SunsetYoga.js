@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import PrimaryButton from "../../components/PrimaryButton";
-import StarList from "../../components/StarList";
-import StarContainer from "../../components/StarContainer";
-import "../../pics/star.png";
-import "../../pics/star2.png";
-import "../../pics/star.png";
-import Img1 from "./img1.jpg";
-import Ornament from "./ornament.png";
+import StarList from "../components/StarList";
+import StarContainer from "../components/StarContainer";
+import "../pics/star.png";
+import "../pics/star2.png";
+import Img1 from "../pics/pages/SunsetYoga/img1.jpg";
+import Ornament from "../pics/pages/SunsetYoga/ornament.png";
 
 export default function SunsetYoga({ motionParam }) {
 	useEffect(() => {
@@ -68,7 +66,7 @@ export default function SunsetYoga({ motionParam }) {
 						Natalia is also available for private sessions.
 					</p>
 				</div>
-				<PrimaryButton>Join Sunset Yoga Class</PrimaryButton>
+				<button className="button">Join Sunset Yoga Class</button>
 				<img alt="Bottom border" className="botImg" src={Ornament} />
 			</div>
 		</motion.section>

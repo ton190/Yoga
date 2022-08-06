@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./logo.png";
+import "../pics/logo.png";
 
 export default function TopMenu({ menuOpen, setMenuOpen }) {
   const [menuState, setMenuState] = useState("closed");

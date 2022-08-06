@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AppAnimation, getMotionParam } from "./AppAnimation";
 import TopMenu from "./components/TopMenu";
-import Home from "./pages/Home/";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import SunsetYoga from "./pages/SunsetYoga";
 import VinyasaFlow from "./pages/VinyasaFlow";
-import "./sass/_index.scss";
+import "./sass/styles.scss";
 
 export default function App() {
   const location = useLocation();

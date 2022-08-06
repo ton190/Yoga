@@ -4,6 +4,19 @@
   .p1 {
     display: grid;
     @include gap(md);
+    > div {
+      display: grid;
+      @include gap(md);
+    }
   }
-}
 
+	@include mq(md){
+		.p1{
+			grid-auto-flow: column;
+			grid-template-columns: 1fr 2fr;
+			h1{
+				width: min-content;
+			}
+		}
+	}
+}
