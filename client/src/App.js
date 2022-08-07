@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AppAnimation, getMotionParam } from "./AppAnimation";
+import { AnimatePresence } from "framer-motion";
 import TopMenu from "./components/TopMenu";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -8,17 +8,29 @@ import SunsetYoga from "./pages/SunsetYoga";
 import VinyasaFlow from "./pages/VinyasaFlow";
 import "./sass/styles.scss";
 
+const currentMobileState = () => window.innerWidth < 850;
+
 export default function App() {
   const location = useLocation();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [motionParam, setMotionParam] = useState(
-    getMotionParam(window.innerWidth < 850)
-  );
+  const [isMobile, setIsMobile] = useState(currentMobileState);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setIsMobile(currentMobileState));
+  }, []);
+
+  const motionParam = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: { duration: isMobile ? 0 : 0.5, delay: isMobile ? 0 : 0.5 },
+    },
+    exit: { opacity: 0, transition: { duration: isMobile ? 0 : 0.5 } },
+  };
 
   return (
     <div id="App" className="App">
-      <TopMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <AppAnimation setMenuOpen={setMenuOpen} setMotionParam={setMotionParam}>
+      <TopMenu isMobile={isMobile} />
+      <AnimatePresence>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home motionParam={motionParam} />} />
           <Route path="/about" element={<About motionParam={motionParam} />} />
@@ -31,7 +43,7 @@ export default function App() {
             element={<VinyasaFlow motionParam={motionParam} />}
           />
         </Routes>
-      </AppAnimation>
+      </AnimatePresence>
     </div>
   );
 }

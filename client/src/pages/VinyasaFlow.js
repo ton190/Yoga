@@ -1,11 +1,43 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import StarList from "../components/StarList";
+import ImgYoga1 from "../pics/pages/VinyasaFlow/yoga1.jpg";
+import ImgYoga2 from "../pics/pages/VinyasaFlow/yoga2.jpg";
+import ImgYoga3 from "../pics/pages/VinyasaFlow/yoga3.jpg";
+import ImgYoga4 from "../pics/pages/VinyasaFlow/yoga4.jpg";
 
 export default function VanyasaFlow({ motionParam }) {
+  // const yogaImages = [ImgYoga1, ImgYoga2, ImgYoga3, ImgYoga4];
+  // const [imageId, setImageId] = useState(0);
+  // const [motionDirection, setMotionDirection] = useState(true);
+
   useEffect(() => {
     document.getElementById("App").className = "App bg-300";
   }, []);
+
+  // let flag = true;
+  // function changeImage(i) {
+  //   if (!flag) return;
+  //   flag = false;
+  //   setTimeout(() => (flag = true), 500);
+  //   let l = yogaImages.length;
+  //   setMotionDirection(i > 0);
+  //   setImageId((imageId + ((l + i) % l)) % l);
+  // }
+
+  // const imageMotionParam = motionDirection
+  //   ? {
+  //       initial: { x: "-100%" },
+  //       exit: { x: "100%", transition: { duration: 0.5 } },
+  //     }
+  //   : {
+  //       initial: { x: "100%" },
+  //       exit: { x: "-100%", transition: { duration: 0.5 } },
+  //     };
+
+  // function ImageLibrary() {
+  //   return <img alt="Yoga box" src={yogaImages[imageId]} />;
+  // }
 
   return (
     <motion.section className="VanyasaFlow Page" {...motionParam}>
@@ -37,6 +69,19 @@ export default function VanyasaFlow({ motionParam }) {
             </p>
           </div>
         </div>
+        {/* <div className="imgBox"> */}
+        {/*   <AnimatePresence> */}
+        {/*     <motion.div */}
+        {/*       key={imageId} */}
+        {/*       animate={{ x: "0", transition: { duration: 0.5 } }} */}
+        {/*       {...imageMotionParam} */}
+        {/*     > */}
+        {/*       <ImageLibrary /> */}
+        {/*     </motion.div> */}
+        {/*   </AnimatePresence> */}
+        {/*   <span className="forward" onClick={() => changeImage(1)} /> */}
+        {/*   <span className="back" onClick={() => changeImage(-1)} /> */}
+        {/* </div> */}
       </div>
     </motion.section>
   );

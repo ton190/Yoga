@@ -1,37 +1,38 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../pics/logo.png";
 
-export default function TopMenu({ menuOpen, setMenuOpen }) {
-  const [menuState, setMenuState] = useState("closed");
+export default function TopMenu({ isMobile }) {
   const location = useLocation();
-  const timer = useRef(null);
+  const [menuState, setMenuState] = useState({
+    open: false,
+    transition: false,
+  });
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [location, setMenuOpen]);
-
-  useEffect(() => {
-    clearTimeout(timer.current);
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-      setMenuState("open");
+    if (isMobile) {
+      setMenuState({ open: false, transition: true });
     } else {
-      document.body.style.overflowY = "scroll";
-      setMenuState("closing");
-      timer.current = setTimeout(() => {
-        setMenuState("closed");
-      }, 300);
+      setMenuState({ open: false, transition: false });
     }
-  }, [menuOpen, timer]);
+  }, [location, isMobile]);
+
+  useEffect(() => {
+    if (!menuState.open && isMobile) document.body.style.overflowY = "hidden";
+    else document.body.style.overflow = "closed";
+  }, [menuState.open, isMobile]);
+
+  const menuOpacity = !isMobile ? 1 : menuState.open ? 1 : 0;
 
   return (
     <div className="TopMenu">
       <div className="container">
         <div className="logo"></div>
         <div
-          onClick={() => setMenuOpen(!menuOpen)}
-          className={`toggle ${menuState}`}
+          onClick={() => {
+            setMenuState({ open: !menuState.open, transition: true });
+          }}
+          className={`toggle ${menuState.open ? "open" : "closed"}`}
         >
           <div>
             <span></span>
@@ -40,8 +41,19 @@ export default function TopMenu({ menuOpen, setMenuOpen }) {
             <span></span>
           </div>
         </div>
-        <div className={`menu ${menuState}`}>
-          <nav>
+        <div
+          className="menu"
+          style={{
+            transition: menuState.transition ? "opacity .5s" : "initial",
+            opacity: menuOpacity,
+          }}
+        >
+          <nav
+            style={{
+              transition: menuState.open ? "opacity .25s .25s" : "opacity .15s ",
+              opacity: menuOpacity,
+            }}
+          >
             <Link to="/">Home</Link>
             <Link to="/about">About me</Link>
             <div className="submenu">

@@ -28,43 +28,16 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    @keyframes a_opacity {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+		animation: a_opacity 2s;
   }
 
   .menu {
-    display: none;
+    display: grid;
     position: fixed;
     inset: 0;
     padding-top: 100px;
     background: clr(TopMenu, mobile_menu_bg);
     color: clr(TopMenu, text);
-    transition: opacity 300ms;
-
-    &.open {
-      display: grid;
-      animation: a_op 300ms;
-    }
-    &.closing {
-      display: grid;
-      opacity: 0;
-    }
-
-    @keyframes a_op {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
   }
 
   nav {

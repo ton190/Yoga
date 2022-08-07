@@ -10,9 +10,6 @@
   padding-top: calc(100px + var(--pg-600));
   min-height: 100vh;
   max-width: 1000px;
-  @include mq(md) {
-    transition: background 1s;
-  }
 }
 .list {
   display: grid;
@@ -35,7 +32,8 @@ h1 {
 }
 
 .App {
-	animation: a_opacity 1.5s;
+  transition: background 1.5s;
+  animation: a_opacity 1.5s;
   &.bg-100 {
     background: clr(primary, bg-100);
   }
@@ -45,12 +43,13 @@ h1 {
   &.bg-300 {
     background: clr(primary, bg-300);
   }
-  @keyframes a_opacity {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+}
+
+@keyframes a_opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
