@@ -1,0 +1,48 @@
+@use "../basic/" as *;
+
+.ImageSlider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  width: 100%;
+  aspect-ratio: 1/1;
+
+  @include mq(md) {
+    display: none;
+  }
+
+  .image {
+    position: absolute;
+    inset: 0;
+  }
+  .forward,
+  .back {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    padding: 5%;
+    align-items: center;
+    span {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      transform: scale(1, 2);
+      user-select: none;
+      font-size: 6rem;
+      font-weight: bold;
+      opacity: 0.25;
+      cursor: pointer;
+      text-shadow: black 0px 0px 10px;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+  .forward {
+    left: 50%;
+    justify-items: end;
+  }
+  .back {
+    right: 50%;
+    justify-items: start;
+  }
+}

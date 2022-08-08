@@ -20,13 +20,13 @@
       background: initial;
       flex-grow: 0;
       flex-basis: 700px;
-
-      &.closing {
-        opacity: 1;
-      }
+			transition: opacity 500ms !important;
+			transform: none !important;
+			opacity: 1;
     }
 
     nav {
+			opacity: 1;
       flex-grow: 1;
       flex-direction: row;
       align-content: initial;

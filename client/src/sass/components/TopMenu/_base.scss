@@ -28,16 +28,29 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-		animation: a_opacity 2s;
+    animation: a_opacity 2s;
   }
 
   .menu {
-    display: grid;
     position: fixed;
     inset: 0;
     padding-top: 100px;
     background: clr(TopMenu, mobile_menu_bg);
     color: clr(TopMenu, text);
+    transform: translateY(-100%);
+    transition: opacity 500ms;
+    opacity: 0;
+    &.open {
+      transform: translateY(0);
+      opacity: 1;
+      nav {
+        transition: opacity 250ms 150ms;
+        opacity: 1;
+      }
+    }
+    &.closed {
+      transition: opacity 500ms, transform 0ms 250ms;
+    }
   }
 
   nav {
@@ -45,6 +58,8 @@
     flex-direction: column;
     align-content: flex-start;
     overflow-y: auto;
+    transition: opacity 250ms;
+    opacity: 0;
 
     a,
     .title {
@@ -75,4 +90,3 @@
     }
   }
 }
-

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import ImageSlider from "../components/ImageSlider.js";
 import StarList from "../components/StarList";
 import ImgYoga1 from "../pics/pages/VinyasaFlow/yoga1.jpg";
 import ImgYoga2 from "../pics/pages/VinyasaFlow/yoga2.jpg";
@@ -7,7 +8,12 @@ import ImgYoga3 from "../pics/pages/VinyasaFlow/yoga3.jpg";
 import ImgYoga4 from "../pics/pages/VinyasaFlow/yoga4.jpg";
 
 export default function VanyasaFlow({ motionParam }) {
-  // const yogaImages = [ImgYoga1, ImgYoga2, ImgYoga3, ImgYoga4];
+  const yogaImages = [
+    { url:  ImgYoga1 , alt: "Yoga 1" },
+    { url:  ImgYoga2 , alt: "Yoga 2" },
+    { url:  ImgYoga3 , alt: "Yoga 3" },
+    { url:  ImgYoga4 , alt: "Yoga 4" },
+  ];
   // const [imageId, setImageId] = useState(0);
   // const [motionDirection, setMotionDirection] = useState(true);
 
@@ -69,6 +75,7 @@ export default function VanyasaFlow({ motionParam }) {
             </p>
           </div>
         </div>
+        <ImageSlider images={yogaImages} />
         {/* <div className="imgBox"> */}
         {/*   <AnimatePresence> */}
         {/*     <motion.div */}
