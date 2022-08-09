@@ -7,39 +7,17 @@
   img {
     width: 100%;
   }
-
-  h1 {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    @include gap(md);
-    align-items: center;
-    &:after {
-      content: "";
-      height: 28px;
-      background: url("../../../pics/star.png"),
-        linear-gradient(transparent 45%, clr(primary, fg) 45%, transparent 55%);
-      background-repeat: no-repeat, repeat;
-    }
-  }
-
   .about,
   .yoga,
+  .yoga > .p1,
+  .yoga > .p2,
+  .yoga > .p2 > .container,
   .energy {
     display: grid;
-    @include gap(lg);
+    @include gap(md);
   }
   .yoga {
-    display: grid;
-    @include gap(lg);
-    .p1,
-    .p2 {
-      display: grid;
-      @include gap(sm);
-    }
     .p2 .container {
-      display: grid;
-      @include gap(md);
-
       > div {
         display: grid;
         gap: pg(100);
@@ -62,5 +40,3 @@
     }
   }
 }
-
-

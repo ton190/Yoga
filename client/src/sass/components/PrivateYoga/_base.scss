@@ -1,0 +1,35 @@
+@use "../../basic/" as *;
+.PrivateYoga {
+  position: relative;
+  padding-bottom: calc(pg(400) * 2);
+  padding-top: pg(400);
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: calc(50vw + 14px);
+    background: clr(primary, line),
+      url("../../../pics/star.png") no-repeat right;
+  }
+  &::before {
+    top: calc(100px + pg(400));
+  }
+  &::after {
+    transform: translateX(calc(100% - 14px)) rotate(180deg);
+    bottom: pg(400);
+  }
+  h1 {
+    position: relative;
+    text-align: center;
+  }
+  .p1,
+  .p2 {
+    display: grid;
+    @include gap(md);
+  }
+  .images1,
+  .images2 {
+    display: none;
+  }
+}

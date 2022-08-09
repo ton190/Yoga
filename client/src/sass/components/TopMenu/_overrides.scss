@@ -2,9 +2,14 @@
 
 .TopMenu {
   @include mq(md) {
+    padding: 0 pg(400);
     justify-content: center;
     grid-template-columns: minmax(min-content, 1000px);
     position: absolute;
+
+    .container {
+      padding: 0;
+    }
 
     .logo {
       flex-grow: 0;
@@ -20,13 +25,13 @@
       background: initial;
       flex-grow: 0;
       flex-basis: 700px;
-			transition: opacity 500ms !important;
-			transform: none !important;
-			opacity: 1;
+      transition: opacity 500ms !important;
+      transform: none !important;
+      opacity: 1;
     }
 
     nav {
-			opacity: 1;
+      opacity: 1;
       flex-grow: 1;
       flex-direction: row;
       align-content: initial;
@@ -38,7 +43,7 @@
         display: block;
         transition: text-shadow 0.2s;
         &:hover {
-          background: initial;
+          text-shadow: clr(TopMenu, text) 0px 0px 10px;
         }
       }
 
@@ -48,7 +53,6 @@
 
       .submenu {
         position: relative;
-
         &:hover,
         .links:hover {
           .title {
@@ -63,7 +67,6 @@
             box-shadow: clr(TopMenu, menu_bg) 0px 0px 2px 1px;
             border-radius: 15px;
             animation: a_op 300ms forwards;
-
             a {
               padding: pg(200);
               transition: background-color 0.2s;

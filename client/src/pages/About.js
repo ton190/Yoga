@@ -1,12 +1,9 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import StarList from "../components/StarList";
-import StarContainer from "../components/StarContainer";
 import AboutImg1 from "../pics/pages/About/about1.jpg";
 import AboutImg2 from "../pics/pages/About/about2.jpg";
 import Video from "../pics/pages/About/video.jpg";
 import "../pics/pages/About/sunset_yoga.jpg";
-import "../pics/star.png";
 import "../pics/pages/About/ornament.png";
 
 export default function About({ motionParam }) {
@@ -16,7 +13,7 @@ export default function About({ motionParam }) {
 	return (
 		<motion.section className="About Page" {...motionParam}>
 			<div className="page">
-				<h1>About me</h1>
+				<h1 className="right_star_title">About me</h1>
 				<div className="about">
 					<div className="p1">
 						<p>
@@ -54,14 +51,14 @@ export default function About({ motionParam }) {
 				<div className="yoga">
 					<div className="p1">
 						<h2>Sunset Yoga is</h2>
-						<StarList>
+						<div className="StarList">
 							<p>A vinyasa-style practice, approachable at any level</p>
 							<p>A full body workout (be prepared!)</p>
 							<p>
 								An outdoor activity (which is safe and great for your
 								well-being)
 							</p>
-						</StarList>
+						</div>
 					</div>
 					<img alt="About me" src={AboutImg2} />
 					<div className="p2">
@@ -88,7 +85,7 @@ export default function About({ motionParam }) {
 				</div>
 				<div className="energy">
 					<img alt="Yoga" src={Video} />
-					<StarContainer>
+					<div className="StarContainer">
 						<h2>
 							The sunset fills you with energy and connects you to nature.
 						</h2>
@@ -97,7 +94,7 @@ export default function About({ motionParam }) {
 							rituals. You’re surrounded by all of the elements, which light you
 							up inside while the light is disappearing outside.”
 						</p>
-					</StarContainer>
+					</div>
 				</div>
 			</div>
 		</motion.section>

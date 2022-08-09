@@ -1,52 +1,28 @@
 @use "../../basic/" as *;
 
 .VanyasaFlow {
+  background: url("../../../pics/pages/VinyasaFlow/ornament.png");
+	background-position: center 100px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+
   .p1 {
-    display: grid;
-    @include gap(md);
     > div {
       display: grid;
       @include gap(md);
     }
   }
+  .p2 {
 
-	.imgBox{
-		position: relative;
-		overflow: hidden;
-		height: 300px;
-		width: 300px;
-		div{
-			position: absolute;
-			inset: 0;
-			img{
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
-		.back, .forward{
-			opacity: .5;
-			cursor: pointer;
-			position: absolute;
-			inset: 0;
-		}
-		.forward{
-			background: red;
-			left: 50%;
-		}
-		.back{
-			background: blue;
-			right: 50%;
-		}
-	}
-
-	@include mq(md){
-		.p1{
-			grid-auto-flow: column;
-			grid-template-columns: 1fr 2fr;
-			h1{
-				width: min-content;
-			}
-		}
-	}
+    .box1,
+    .box2 {
+      display: grid;
+      @include gap(md);
+      .content {
+        display: flex;
+        flex-direction: column;
+        @include gap(sm);
+      }
+    }
+  }
 }

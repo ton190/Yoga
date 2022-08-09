@@ -1,0 +1,34 @@
+@use "../../basic/" as *;
+
+.VanyasaFlow {
+  @include mq(md) {
+    background-size: initial;
+    .p2 {
+      .box1 {
+        grid-template-rows: max-content max-content 1fr;
+        img:first-of-type {
+          align-self: flex-start;
+        }
+      }
+      .box2 {
+        position: relative;
+        margin-top: calc(var(--pg-700));
+        .content {
+          flex-direction: row;
+          gap: 0;
+          p {
+            padding: 0 pg(300);
+            border-right: 1px solid;
+            &:last-of-type {
+              padding-right: 0;
+              border-right: none;
+            }
+            &:first-of-type {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

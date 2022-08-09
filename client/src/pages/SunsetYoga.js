@@ -1,9 +1,5 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import StarList from "../components/StarList";
-import StarContainer from "../components/StarContainer";
-import "../pics/star.png";
-import "../pics/star2.png";
 import Img1 from "../pics/pages/SunsetYoga/img1.jpg";
 import Ornament from "../pics/pages/SunsetYoga/ornament.png";
 
@@ -16,9 +12,9 @@ export default function SunsetYoga({ motionParam }) {
 		<motion.section className="SunsetYoga Page" {...motionParam}>
 			<div className="page">
 				<img alt="Ornament" className="topImg" src={Ornament} />
-				<h1>SUNSET YOGA CLASS</h1>
+				<h1 className="all_star_title">SUNSET YOGA CLASS</h1>
 				<h2>Why to join Sunset Yoga class?</h2>
-				<StarList className="flex">
+				<div className="StarList flex">
 					<p>
 						The Key West sunset is legendary. Let's celebrate it in a healthy
 						way!
@@ -44,10 +40,10 @@ export default function SunsetYoga({ motionParam }) {
 						hours (3 hours before the sunrise and the sunset), it is the most
 						effective time in Yoga when you can get the maximum energy levels;
 					</p>
-				</StarList>
-				<StarContainer>
+				</div>
+				<div className="StarContainer">
 					<img alt="Yoga" src={Img1} />
-				</StarContainer>
+				</div>
 				<div className="list flex">
 					<p>
 						Sunset Yoga classes take place at the Truman Waterfront, down the

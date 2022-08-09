@@ -1,17 +1,17 @@
 @use "../basic/" as *;
 
 .ImageSlider {
-  display: grid;
-  gap: pg(200);
+	display: grid;
+	gap: pg(600);
   @include mq(md) {
     display: none;
   }
   .imgContainer {
-    background: hsla(0, 0%, 100%, 0.8);
-    justify-self: center;
+		justify-self: center;;
     position: relative;
-    width: 100%;
+		width: 100%;
     aspect-ratio: 1/1;
+    background: hsla(0, 0%, 100%, 0.8);
     border-radius: 25px;
   }
 
@@ -29,8 +29,6 @@
     display: grid;
     padding: 5%;
     align-items: center;
-    right: 50%;
-    justify-items: start;
     span {
       position: relative;
       border-radius: 100%;
@@ -40,21 +38,36 @@
       display: grid;
       align-items: center;
       justify-items: center;
-      font-size: 2rem;
+      font-size: 3rem;
       width: 4rem;
       height: 4rem;
+      font-weight: bold;
+      opacity: 0.3;
       cursor: pointer;
+      filter: drop-shadow(black 0px 0px 2px);
+      transition: transform 0.3s;
       &:before {
         content: "";
-        left: calc(50% - 6px);
         position: absolute;
-        width: 25vw;
+        left: calc(6px - 50%);
+        width: 100%;
         height: 2px;
         background: clr(primary, fg);
+      }
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }
   .forward {
-    transform: rotate(180deg);
+    left: 50%;
+    justify-items: end;
+  }
+  .back {
+    right: 50%;
+    justify-items: start;
+    span:before {
+      left: calc(50% - 6px);
+    }
   }
 }

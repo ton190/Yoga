@@ -1,0 +1,41 @@
+@use "../basic/" as *;
+
+.right_star_title {
+  position: relative;
+  justify-self: left;
+  &:after {
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 75vw;
+    left: calc(100% + pg(400));
+    background: url("../../pics/star.png"), clr(primary, line);
+    background-repeat: no-repeat;
+    transform: translateY(50%);
+  }
+}
+
+.all_star_title {
+  @include mq(md) {
+    position: relative;
+    justify-self: center;
+		padding: 0 pg(400);
+    &::before,
+    &::after {
+      background: url("../../pics/star.png"), clr(primary, line);
+      background-repeat: no-repeat, repeat;
+      position: absolute;
+      content: "";
+      height: 28px;
+      width: 50vw;
+      left: calc(100%);
+			top: 50%;
+      transform: translateY(-50%);
+    }
+    &:after {
+      transform: translate(0, -50%) rotate(180deg);
+			left: initial;
+			right: calc(100%);
+    }
+  }
+}

@@ -7,6 +7,9 @@ import About from "./pages/About";
 import SunsetYoga from "./pages/SunsetYoga";
 import VinyasaFlow from "./pages/VinyasaFlow";
 import "./sass/styles.scss";
+import "./pics/star.png";
+import "./pics/star2.png";
+
 
 const currentMobileState = () => window.innerWidth < 850;
 

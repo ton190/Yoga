@@ -1,58 +1,35 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import ImageSlider from "../components/ImageSlider.js";
-import StarList from "../components/StarList";
 import ImgYoga1 from "../pics/pages/VinyasaFlow/yoga1.jpg";
 import ImgYoga2 from "../pics/pages/VinyasaFlow/yoga2.jpg";
 import ImgYoga3 from "../pics/pages/VinyasaFlow/yoga3.jpg";
 import ImgYoga4 from "../pics/pages/VinyasaFlow/yoga4.jpg";
+import "../pics/pages/VinyasaFlow/ornament.png";
 
 export default function VanyasaFlow({ motionParam }) {
   const yogaImages = [
-    { url:  ImgYoga1 , alt: "Yoga 1" },
-    { url:  ImgYoga2 , alt: "Yoga 2" },
-    { url:  ImgYoga3 , alt: "Yoga 3" },
-    { url:  ImgYoga4 , alt: "Yoga 4" },
+    { url: ImgYoga1, alt: "Yoga 1" },
+    { url: ImgYoga2, alt: "Yoga 2" },
+    { url: ImgYoga3, alt: "Yoga 3" },
+    { url: ImgYoga4, alt: "Yoga 4" },
   ];
-  // const [imageId, setImageId] = useState(0);
-  // const [motionDirection, setMotionDirection] = useState(true);
 
   useEffect(() => {
     document.getElementById("App").className = "App bg-300";
   }, []);
 
-  // let flag = true;
-  // function changeImage(i) {
-  //   if (!flag) return;
-  //   flag = false;
-  //   setTimeout(() => (flag = true), 500);
-  //   let l = yogaImages.length;
-  //   setMotionDirection(i > 0);
-  //   setImageId((imageId + ((l + i) % l)) % l);
-  // }
-
-  // const imageMotionParam = motionDirection
-  //   ? {
-  //       initial: { x: "-100%" },
-  //       exit: { x: "100%", transition: { duration: 0.5 } },
-  //     }
-  //   : {
-  //       initial: { x: "100%" },
-  //       exit: { x: "-100%", transition: { duration: 0.5 } },
-  //     };
-
-  // function ImageLibrary() {
-  //   return <img alt="Yoga box" src={yogaImages[imageId]} />;
-  // }
-
   return (
-    <motion.section className="VanyasaFlow Page" {...motionParam}>
+    <motion.section
+      className="VanyasaFlow Page PrivateYoga"
+      {...motionParam}
+    >
       <div className="page">
         <div className="p1">
           <h1>Vinyasa flow</h1>
           <div>
             <h2>What are the benefits of a Vinyasa Flow private class?</h2>
-            <StarList>
+            <div className="StarList">
               <p>The class goes at your own pace;</p>
               <p>
                 The teacher can give you all the attention according to your
@@ -67,7 +44,7 @@ export default function VanyasaFlow({ motionParam }) {
                 'remember' the yoga postures in a right alignment which is an
                 injury prevention.
               </p>
-            </StarList>
+            </div>
             <p>
               <b>Natalia Catapano is E-RYT 500 certified yoga teacher.</b> She
               has been practicing Vinyasa Flow since 2010 and teaching yoga
@@ -76,19 +53,44 @@ export default function VanyasaFlow({ motionParam }) {
           </div>
         </div>
         <ImageSlider images={yogaImages} />
-        {/* <div className="imgBox"> */}
-        {/*   <AnimatePresence> */}
-        {/*     <motion.div */}
-        {/*       key={imageId} */}
-        {/*       animate={{ x: "0", transition: { duration: 0.5 } }} */}
-        {/*       {...imageMotionParam} */}
-        {/*     > */}
-        {/*       <ImageLibrary /> */}
-        {/*     </motion.div> */}
-        {/*   </AnimatePresence> */}
-        {/*   <span className="forward" onClick={() => changeImage(1)} /> */}
-        {/*   <span className="back" onClick={() => changeImage(-1)} /> */}
-        {/* </div> */}
+        <div className="p2">
+          <div className="box1">
+            <p>
+              <b>What does 'Vinyasa' mean?</b>
+              <br />
+              From Sanskrit it means 'in a special way'.
+            </p>
+            <p>
+              Vinyasa Flow is an integration of your state of mind and yoga
+              postures. It includes standing and sitting poses, multiple
+              breathing techniques. Sun salutation is used as warm-up for the
+              practice as it builds heat in the body.
+            </p>
+            <div className="images1">
+              <img alt="Yoga 1" src={ImgYoga1} />
+              <img alt="Yoga 2" src={ImgYoga2} />
+            </div>
+          </div>
+          <div className="box2">
+            <div className="images2">
+              <img alt="Yoga 3" src={ImgYoga3} />
+              <img alt="Yoga 4" src={ImgYoga4} />
+            </div>
+            <h2>Vinyasa Flow</h2>
+            <div className="content">
+              <p>
+                Is a great way to increase your stamina, improve your body shape
+                and flexibility;
+              </p>
+              <p>Is physical and comprehensive;</p>
+              <p>
+                Is an activity that makes the entire body work hard (front,
+                back, upper and lower body).
+              </p>
+            </div>
+          </div>
+        </div>
+        <button className="button">Join Sunset Yoga Class</button>
       </div>
     </motion.section>
   );

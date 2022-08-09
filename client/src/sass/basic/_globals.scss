@@ -1,12 +1,14 @@
 .Page {
   display: grid;
   justify-content: center;
+	overflow-x: hidden;
+	padding: 0 pg(400);
 }
 .page {
   display: grid;
   @include gap(lg);
   align-content: flex-start;
-  padding: pg(400);
+  padding: pg(400) 0;
   padding-top: calc(100px + var(--pg-600));
   min-height: 100vh;
   max-width: 1000px;

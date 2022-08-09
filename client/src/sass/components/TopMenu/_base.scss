@@ -8,9 +8,9 @@
   height: 100px;
   display: grid;
   align-items: end;
-  padding: 0 pg(400);
 
   .container {
+		padding: 0 pg(400);
     border-bottom: 1px solid clr(primary, fg);
     height: 100px;
     position: relative;
@@ -44,12 +44,12 @@
       transform: translateY(0);
       opacity: 1;
       nav {
-        transition: opacity 250ms 150ms;
+        transition: opacity 250ms 125ms;
         opacity: 1;
       }
     }
     &.closed {
-      transition: opacity 500ms, transform 0ms 250ms;
+      transition: opacity 800ms, transform 0ms 600ms;
     }
   }
 
@@ -58,7 +58,7 @@
     flex-direction: column;
     align-content: flex-start;
     overflow-y: auto;
-    transition: opacity 250ms;
+    transition: opacity 500ms;
     opacity: 0;
 
     a,
@@ -73,11 +73,6 @@
       padding: pg(100) 0;
       text-align: center;
       transition: background-color 0.2s, text-sahdow 0.2s;
-
-      &:hover {
-        background: clr(TopMenu, hover_bg);
-        text-shadow: clr(TopMenu, text) 0px 0px 10px;
-      }
     }
 
     .title {
