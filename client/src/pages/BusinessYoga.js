@@ -22,8 +22,8 @@ export default function BusinessYoga({ motionParam }) {
 	return (
 		<motion.section className="BusinessYoga Page PrivateYoga" {...motionParam}>
 			<div className="ornament">
-				<img class="o1" alt="Ornament" src={Ornament} />
-				<img class="o2" alt="Ornament" src={Ornament} />
+				<img className="o1" alt="Ornament" src={Ornament} />
+				<img className="o2" alt="Ornament" src={Ornament} />
 			</div>
 			<div className="page">
 				<div className="p1">

@@ -6,14 +6,18 @@
     &::after {
       background: url("../../../pics/star.png") no-repeat right;
     }
+    .ornament {
+      width: 100%;
+			max-width: 650px;
+    }
     h1 {
-			position: relative;
+      position: relative;
       text-transform: initial;
       text-align: left;
       &::before {
-				position: absolute;
-				top: -0.4em;
-				left: 0.10em;
+        position: absolute;
+        top: -0.4em;
+        left: 0.1em;
 
         content: "";
         height: 28px;
