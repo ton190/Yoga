@@ -3,17 +3,17 @@
 .Page {
   display: grid;
   justify-content: center;
-	overflow-x: hidden;
-	padding: 0 pg(400);
+  overflow-x: hidden;
+  padding: 0 pg(400);
   min-height: 100vh;
 }
 .page {
-	z-index: 2;
+  z-index: 2;
   display: grid;
   @include gap(lg);
   align-content: flex-start;
   padding: pg(400) 0;
-  padding-top: calc(100px + var(--pg-600));
+  padding-top: calc(100px + var(--pg-400));
   max-width: 1000px;
 }
 .list {
@@ -28,12 +28,16 @@
     }
   }
 }
-h1, h1 span, h1 div {
+h1,
+h1 span,
+h1 div {
   font-family: "Philosopher", sans-serif;
-  font-size: fs(700);
+  font-size: fs(600);
   margin: 0;
   padding: 0;
-  // text-transform: uppercase;
+  @include mq(sm) {
+    font-size: fs(700);
+  }
 }
 
 .App {
