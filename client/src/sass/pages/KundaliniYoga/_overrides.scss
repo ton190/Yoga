@@ -1,0 +1,28 @@
+@use "../../basic/" as *;
+
+.KundaliniYoga {
+  @include mq(md) {
+    background-size: initial;
+
+    .p2 {
+      padding-top: pg(700);
+			@include gap(lg);
+      .images {
+        display: grid;
+        grid-auto-flow: column;
+        @include gap(md);
+        img:nth-child(2n) {
+          align-self: flex-end;
+          margin-top: pg(600);
+        }
+      }
+			.box{
+				grid-auto-flow: column;
+				grid-template-columns: 1fr 1fr;
+				p{
+					padding: 0 pg(400);
+				}
+			}
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use "../../basic/" as *;
+
+.KundaliniYoga {
+
+  .p1 {
+    > div {
+      display: grid;
+      @include gap(lg);
+      > div:not(.ImageSlider) {
+        display: grid;
+        @include gap(md);
+        &:not(.StarList) > p:last-of-type {
+          text-align: right;
+        }
+      }
+    }
+  }
+  .p2 {
+    .images {
+      display: none;
+    }
+		.box{
+      display: grid;
+      @include gap(md);
+		}
+  }
+}

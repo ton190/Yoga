@@ -1,0 +1,28 @@
+@use "../../basic/" as *;
+
+.WellnessCoaching {
+	padding-bottom: pg(400);
+	h1{
+		text-align: center;
+	}
+  img.center {
+    width: 100%;
+  }
+  .ornament {
+    justify-self: center;
+    &:last-of-type {
+      transform: rotate(180deg);
+    }
+  }
+  .p1 {
+    display: grid;
+    @include gap(lg);
+    div {
+      display: grid;
+      @include gap(md);
+    }
+  }
+	.inOrnament{
+		display: none;
+	}
+}

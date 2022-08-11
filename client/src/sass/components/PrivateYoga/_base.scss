@@ -2,7 +2,7 @@
 .PrivateYoga {
   position: relative;
   padding-bottom: calc(pg(400) * 2);
-  padding-top: pg(400);
+  padding-top: pg(600);
   &:before,
   &:after {
     position: absolute;
@@ -16,8 +16,44 @@
     top: calc(100px + pg(400));
   }
   &::after {
-    transform: translateX(calc(100% - 14px)) rotate(180deg);
+    transform: translateX(calc(100% - 28px)) rotate(180deg);
     bottom: pg(400);
+  }
+  .ornament {
+		z-index: 1;
+    position: absolute;
+    inset: 0;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+		max-width: 50%;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+    img:first-of-type {
+      opacity: 0.2;
+    }
+    img:last-of-type {
+      position: absolute;
+      inset: 0;
+      filter: blur(10px);
+      animation: ornament 10s alternate infinite;
+    }
+  }
+  @keyframes ornament {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   h1 {
     position: relative;

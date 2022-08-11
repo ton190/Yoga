@@ -1,10 +1,6 @@
 @use "../../basic/" as *;
 
 .VanyasaFlow {
-  background: url("../../../pics/pages/VinyasaFlow/ornament.png");
-	background-position: center 100px;
-	background-repeat: no-repeat;
-	background-size: 100%;
 
   .p1 {
     > div {
@@ -13,6 +9,10 @@
     }
   }
   .p2 {
+    .images1,
+    .images2 {
+      display: none;
+    }
 
     .box1,
     .box2 {

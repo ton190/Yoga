@@ -1,0 +1,43 @@
+@use "../../basic/" as *;
+
+.BusinessYoga {
+  .p1 {
+    @include gap(lg);
+    align-items: flex-start;
+    .title {
+      text-align: center;
+      justify-self: center;
+      display: grid;
+      gap: pg(200);
+      @include mq(sm) {
+        gap: 0;
+        text-align: left;
+      }
+    }
+    h1 {
+      div {
+        max-width: min-content;
+        @include mq(sm) {
+          max-width: initial;
+        }
+        display: flex;
+        justify-self: center;
+        justify-content: left;
+        gap: pg(50);
+      }
+      span:last-child {
+        font-size: fs(300);
+        align-self: flex-start;
+      }
+    }
+  }
+  .p2 {
+    .images {
+      display: none;
+    }
+		.content{
+			display: grid;
+			@include gap(md);
+		}
+  }
+}

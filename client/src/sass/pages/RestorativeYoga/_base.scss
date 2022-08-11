@@ -1,0 +1,23 @@
+@use "../../basic/" as *;
+
+.RestorativeYoga{
+  .p1 {
+    > div {
+      display: grid;
+      @include gap(lg);
+      > div:not(.ImageSlider) {
+        display: grid;
+        @include gap(md);
+      }
+    }
+  }
+  .p2 {
+    .images {
+      display: none;
+    }
+		.box{
+      display: grid;
+      @include gap(md);
+		}
+  }
+}

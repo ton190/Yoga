@@ -10,17 +10,16 @@
     .container {
       padding: 0;
     }
-
     .logo {
       flex-grow: 0;
       flex-shrink: 0;
       flex-basis: 211px;
       margin-right: pg(600);
     }
-
     .menu {
       display: flex;
       position: relative;
+      overflow-y: initial;
       padding-top: 0;
       background: initial;
       flex-grow: 0;
@@ -39,38 +38,37 @@
       overflow-y: initial;
       a,
       .title {
-        font-size: 0.9em;
+        white-space: nowrap;
         display: block;
+        font-size: 0.95em;
         transition: text-shadow 0.2s;
         &:hover {
-          text-shadow: clr(TopMenu, text) 0px 0px 10px;
+          text-shadow: clr(TopMenu, text) 0px 0px 10px !important;
         }
-      }
-
-      .links {
-        display: none;
       }
 
       .submenu {
         position: relative;
-        &:hover,
-        .links:hover {
-          .title {
-            text-shadow: clr(TopMenu, text) 0px 0px 10px;
+        &:hover {
+          > .title {
+            text-shadow: clr(TopMenu, text) 0px 0px 10px !important;
+            &:not(.base) {
+              background: clr(TopMenu, hover_bg);
+            }
           }
-          .links {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            display: grid;
+          > .sublinks {
             background: clr(TopMenu, submenu_bg);
-            box-shadow: clr(TopMenu, menu_bg) 0px 0px 2px 1px;
             border-radius: 15px;
-            animation: a_op 300ms forwards;
-            a {
+            display: flex;
+            a,
+            .title {
               padding: pg(200);
               transition: background-color 0.2s;
-
+              &:hover {
+                background: clr(TopMenu, hover_bg);
+              }
+            }
+            a {
               &:first-of-type {
                 border-radius: 15px 15px 0px 0px;
               }
@@ -81,9 +79,62 @@
                 background: clr(TopMenu, hover_bg);
               }
             }
+            .sublinks {
+              border-radius: 0px 15px 15px 15px;
+              a:first-of-type {
+                border-radius: 0px 15px 0px 0px;
+              }
+            }
           }
         }
       }
+
+      .sublinks {
+        position: absolute;
+        display: none;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: a_opacity 300ms forwards;
+        .sublinks {
+          left: 100%;
+          top: 0;
+          transform: none;
+        }
+      }
+      // .submenu {
+      //   position: relative;
+      //   &:hover,
+      //   .links:hover {
+      //     .title {
+      //       text-shadow: clr(TopMenu, text) 0px 0px 10px;
+      //     }
+      //     .links {
+      //       position: absolute;
+      //       left: 50%;
+      //       transform: translateX(-50%);
+      //       display: grid;
+      //       background: clr(TopMenu, submenu_bg);
+      //       box-shadow: clr(TopMenu, menu_bg) 0px 0px 2px 1px;
+      //       border-radius: 15px;
+      //       animation: a_op 300ms forwards;
+      //       a {
+      //         padding: pg(200);
+      //         transition: background-color 0.2s;
+
+      //         &:first-of-type {
+      //           border-radius: 15px 15px 0px 0px;
+      //         }
+      //         &:last-of-type {
+      //           border-radius: 0px 0px 15px 15px;
+      //         }
+      //         &:hover {
+      //           background: clr(TopMenu, hover_bg);
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 }

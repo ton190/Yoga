@@ -1,0 +1,33 @@
+@use "../../basic/" as *;
+
+.KundaDance {
+  @include mq(md) {
+    background-size: initial;
+    .p1 {
+      .title {
+        text-align: left;
+      }
+      .box1 p:last-of-type {
+        padding-right: pg(700);
+      }
+      .box2 {
+        margin-top: 1em;
+        align-content: flex-start;
+      }
+    }
+    .p2 {
+      padding-top: pg(700);
+			display: grid;
+			@include gap(lg);
+      .images {
+        display: grid;
+        grid-auto-flow: column;
+        @include gap(md);
+        img:nth-child(2n) {
+          align-self: flex-end;
+          margin-top: pg(600);
+        }
+      }
+    }
+  }
+}

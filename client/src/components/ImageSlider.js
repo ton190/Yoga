@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import "../sass/components/_ImageSlider.scss";
 
 export default function ImageSlier({ images }) {
 	const [imageId, setImageId] = useState(0);

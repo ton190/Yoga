@@ -1,0 +1,42 @@
+@use "../../basic/" as *;
+
+.KundaDance {
+  .p1 {
+    @include gap(lg);
+		.title{
+			justify-self: center;
+		}
+		.content{
+			padding-top: pg(400);
+			display: grid;
+			@include gap(md);
+			justify-self: center;
+			h2{
+				white-space: nowrap;
+			}
+		}
+    .box1,
+    .box1 div:not(:first-of-type) {
+      display: grid;
+      @include gap(md);
+      h1 {
+        div {
+          display: flex;
+          justify-content: left;
+          gap: pg(50);
+        }
+        span:last-child {
+          font-size: fs(300);
+          align-self: flex-start;
+        }
+      }
+    }
+    .box2 {
+      display: grid;
+      @include gap(md);
+    }
+  }
+  .p2 .images {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+@use "../../basic/" as *;
+
+footer {
+  @include mq(md) {
+    .box {
+    }
+  }
+}

@@ -1,6 +1,7 @@
 @use "../basic/" as *;
 
 .button {
+	align-self: center;
   background: clr(Buttons, bg);
   padding: pg(300) pg(600);
   border-radius: 25px;

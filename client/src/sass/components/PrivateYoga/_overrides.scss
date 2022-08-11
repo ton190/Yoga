@@ -7,16 +7,21 @@
       background: url("../../../pics/star.png") no-repeat right;
     }
     h1 {
+			position: relative;
+      text-transform: initial;
       text-align: left;
-      display: grid;
-      @include gap(sm);
-      align-content: flex-start;
       &::before {
+				position: absolute;
+				top: -0.4em;
+				left: 0.10em;
+
         content: "";
-        margin-left: 0.25rem;
         height: 28px;
         width: 28px;
         background: url("../../../pics/star.png");
+      }
+      span {
+        text-transform: initial;
       }
     }
     img {
@@ -25,33 +30,23 @@
     button {
       justify-self: center;
     }
-    .p1,
-    .p2 {
+    .p1 {
       grid-auto-flow: column;
       grid-template-columns: 1fr 1.5fr;
     }
 
     .p2 {
+      // padding-top: pg(700);
       position: relative;
       &:before {
+        content: "";
         background: url("../../../pics/star.png"), clr(primary, line);
         background-repeat: no-repeat, repeat;
         position: absolute;
-        content: "";
         height: 28px;
         width: calc(((100vw - 100%) / 2) + 25%);
         right: calc((100vw - 100%) / -2);
       }
-    }
-    .images1,
-    .images2 {
-      display: grid;
-      @include gap(md);
-      grid-auto-flow: column;
-      align-items: flex-end;
-    }
-    .images2 {
-      grid-template-columns: 2fr 1fr;
     }
   }
 }

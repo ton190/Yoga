@@ -4,6 +4,21 @@
   @include mq(md) {
     background-size: initial;
     .p2 {
+      padding-top: pg(700);
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1.5fr;
+
+      .images1,
+      .images2 {
+        display: grid;
+        @include gap(md);
+        grid-auto-flow: column;
+        align-items: flex-end;
+      }
+      .images2 {
+        grid-template-columns: 2fr 1fr;
+      }
+
       .box1 {
         grid-template-rows: max-content max-content 1fr;
         img:first-of-type {
@@ -12,7 +27,7 @@
       }
       .box2 {
         position: relative;
-        margin-top: calc(var(--pg-700));
+        margin-top: pg(700);
         .content {
           flex-direction: row;
           gap: 0;

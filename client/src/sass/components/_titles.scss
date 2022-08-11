@@ -8,10 +8,11 @@
     position: absolute;
     height: 28px;
     width: 75vw;
+		top: 50%;
     left: calc(100% + pg(400));
     background: url("../../pics/star.png"), clr(primary, line);
     background-repeat: no-repeat;
-    transform: translateY(50%);
+    transform: translateY(-50%);
   }
 }
 

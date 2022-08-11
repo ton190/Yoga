@@ -12,7 +12,7 @@ export default function SunsetYoga({ motionParam }) {
 		<motion.section className="SunsetYoga Page" {...motionParam}>
 			<div className="page">
 				<img alt="Ornament" className="topImg" src={Ornament} />
-				<h1 className="all_star_title">SUNSET YOGA CLASS</h1>
+				<h1 className="all_star_title">Sunset Yoga</h1>
 				<h2>Why to join Sunset Yoga class?</h2>
 				<div className="StarList flex">
 					<p>
@@ -62,7 +62,7 @@ export default function SunsetYoga({ motionParam }) {
 						Natalia is also available for private sessions.
 					</p>
 				</div>
-				<button className="button">Join Sunset Yoga Class</button>
+				<button className="button">Join SunSet Yoga Class</button>
 				<img alt="Bottom border" className="botImg" src={Ornament} />
 			</div>
 		</motion.section>

@@ -4,6 +4,7 @@
   background: url("../../../pics/pages//About/ornament.png");
   background-repeat: no-repeat;
   background-position: right 100px;
+	padding-bottom: pg(400);
   img {
     width: 100%;
   }
@@ -37,6 +38,22 @@
     div {
       display: grid;
       @include gap(md);
+    }
+  }
+  .credentials {
+    display: grid;
+    @include gap(lg);
+		h1{
+			font-size: fs(600);
+		}
+    .images {
+      display: flex;
+			flex-wrap: wrap;
+      @include gap(lg);
+      justify-content: center;
+    }
+    img {
+			flex: 0 0 250px;
     }
   }
 }

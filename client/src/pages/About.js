@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import AboutImg1 from "../pics/pages/About/about1.jpg";
 import AboutImg2 from "../pics/pages/About/about2.jpg";
 import Video from "../pics/pages/About/video.jpg";
+import C1 from "../pics/pages/About/c1.jpg";
+import C2 from "../pics/pages/About/c2.jpg";
+import C3 from "../pics/pages/About/c3.jpg";
 import "../pics/pages/About/sunset_yoga.jpg";
 import "../pics/pages/About/ornament.png";
 
@@ -13,7 +16,7 @@ export default function About({ motionParam }) {
 	return (
 		<motion.section className="About Page" {...motionParam}>
 			<div className="page">
-				<h1 className="right_star_title">About me</h1>
+				<h1 className="right_star_title">About Me</h1>
 				<div className="about">
 					<div className="p1">
 						<p>
@@ -94,6 +97,14 @@ export default function About({ motionParam }) {
 							rituals. You’re surrounded by all of the elements, which light you
 							up inside while the light is disappearing outside.”
 						</p>
+					</div>
+				</div>
+				<div className="credentials">
+					<h1 className="right_star_title">Credentials</h1>
+					<div className="images">
+						<img alt="Credential1" src={C1}/>
+						<img alt="Credential2" src={C2}/>
+						<img alt="Credential3" src={C3}/>
 					</div>
 				</div>
 			</div>
